@@ -1,0 +1,47 @@
+﻿ @model User
+
+ <form asp-action="Register" method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <h2 style="color:mediumblue;font-size=200; margin:450">Welcome to Our Book_Store</h2>
+    <br />
+    <br />
+    <div>
+        <label asp-for="FirstName" ></label>
+        <input asp-for="FirstName" />
+        <span asp-validation-for="FirstName"></span>
+    </div>
+    <br />
+    <hr />
+    <br />
+    <div>
+        <label asp-for="LastName"></label>
+        <input asp-for="LastName" />
+        <span asp-validation-for="LastName"></span>
+    </div>
+    <br />
+    <hr />
+    <br />
+    <div>
+        <label asp-for="Email"></label>
+        <input asp-for="Email" />
+        <span asp-validation-for="Email"></span>
+    </div>
+    <br />
+    <hr />
+    <br />
+    <div>
+        <label asp-for="Password"></label>
+        <input asp-for="Password" type="password" />
+        <span asp-validation-for="Password"></span>
+    </div>
+    <br />
+    <hr />
+    <br />
+    
+    <button type="submit" class="btn btn-success">Register</button>
+</form>
+
+@section Scripts {
+
+    <partial name="_ValidationScriptsPartial" />
+}

@@ -1,0 +1,37 @@
+﻿@model IEnumerable<Category>
+
+<table class="table text-center">
+    <body style="background-color:blanchedalmond">
+    <thead>
+
+    <tr>
+        <th scope="col">CategoryId</th>
+        <th scope="col">Name</th>
+        <th scope="col">Description</th>
+        <th scope="col">Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <th scope="col">@item.CategoryId</th>
+                <th scope="col">@item.Name</th>
+                <th scope="col">@item.Description</th>
+                <th scope="col">
+                    <a href="~/Category/ViewDetails/@item.CategoryId" class="btn btn-outline-info mx-2">View</a>
+                    <a href="~/Category/Edit/@item.CategoryId" class="btn btn-outline-dark mx-2">Edit</a>
+                    <a href="~/Category/Delete/@item.CategoryId" class="btn btn-outline-danger mx-2">Delete</a>
+                </th>
+            </tr>
+        }
+  
+    </tbody>
+    <tfoot>
+        <h1 style="color:brown; margin-left:450px "> Book Store</h1>
+        
+
+        <a href="~/Category/Create" class="btn btn-success m-3" style="background-color:peru; margin-left:100px">Add Category</a>
+    </tfoot>
+</body>
+</table>
